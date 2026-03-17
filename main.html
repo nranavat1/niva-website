@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niva Ranavat | Projects Portfolio</title>
+  <meta name="description" content="Portfolio of Niva Ranavat — computer vision, machine learning, robotics, and perception projects." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-2: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --muted-2: #64748b;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --max-width: 1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #f8fafc, #eef2ff);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(248, 250, 252, 0.82);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .socials a:hover,
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 4.5rem 0 2rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 2rem;
+    }
+
+    .eyebrow {
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 8ch;
+    }
+
+    .hero p {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 58ch;
+    }
+
+    .hero-actions,
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.4rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.86rem 1.2rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-2);
+    }
+
+    .focus-box {
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      align-self: end;
+    }
+
+    .focus-box h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .focus-box ul {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 1.4rem 0 1.2rem;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-note {
+      max-width: 40ch;
+      color: var(--muted-2);
+      font-size: 0.95rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--muted);
+      padding: 0.58rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .project-year {
+      color: var(--muted-2);
+      font-size: 0.92rem;
+      margin-top: 0.2rem;
+    }
+
+    .label {
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.4rem 0.72rem;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-summary {
+      color: var(--muted);
+    }
+
+    .highlight-box {
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      padding: 1rem;
+    }
+
+    .highlight-box h4 {
+      font-size: 0.78rem;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.45rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted-2);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card,
+      .two-col,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-card,
+      .card { padding: 1.2rem; }
+      .nav-inner { align-items: start; flex-direction: column; }
+      h1 { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Niva Ranavat</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div>
+            <div class="eyebrow">Portfolio Template</div>
+            <h1>Computer Vision & AI Projects</h1>
+            <p>
+              I’m Niva Ranavat, a machine learning and computer vision engineer interested in
+              perception, robotics, human-centered AI, and real-world systems. This is a simple
+              GitHub-friendly portfolio template you can edit fast and publish easily.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn btn-secondary" href="#contact">Contact</a>
+            </div>
+
+            <div class="socials">
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Resume</a>
+            </div>
+          </div>
+
+          <aside class="focus-box">
+            <h3>Current focus</h3>
+            <ul>
+              <li>Human pose estimation and visual understanding</li>
+              <li>Perception for robotics and autonomous systems</li>
+              <li>Machine learning systems with real-world impact</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container two-col">
+        <article class="card">
+          <h3>About</h3>
+          <p>
+            I build projects across computer vision, perception, machine learning, and robotics.
+            I like combining strong technical implementation with practical impact, especially in
+            safety-critical and human-centered applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Skills</h3>
+          <div class="skills">
+            <span class="chip">Python</span>
+            <span class="chip">C++</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Perception</span>
+            <span class="chip">Robotics</span>
+            <span class="chip">Sensor Fusion</span>
+            <span class="chip">Machine Learning</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Selected Work</div>
+            <h2>Projects</h2>
+          </div>
+          <p class="section-note">
+            Replace the placeholder text with your exact project results, links, screenshots, and
+            metrics. This single HTML file is meant to be easy to upload to GitHub Pages.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-title">Human Pose Estimation</div>
+                <div class="project-year">2026</div>
+              </div>
+              <span class="label">Featured</span>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Pose Estimation</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <p class="project-summary">
+              Built a human pose estimation pipeline for understanding body keypoints and movement
+              from visual data. You can add the model used, dataset, metrics, and what was novel
+              or challenging about the implementation.
+            </p>
+            <div class="highlight-box">
+              <h4>What to add</h4>
+              <p>Add model architecture, training or inference pipeline, evaluation metric, and outcome.</p>
+            </div>
+            <div class="project-links">
+              <a href="#">GitHub</a>
+              <a href="#">Demo</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-title">Perception for Autonomous Systems</div>
+                <div class="project-year">2025</div>
+              </div>
+              <span class="label">Case Study</span>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Perception</span>
+              <span class="tag">Autonomous Driving</span>
+              <span class="tag">Tracking</span>
+            </div>
+            <p class="project-summary">
+              Worked on scene understanding and object state estimation problems for autonomous
+              systems. Add your exact contributions around perception, state estimation, sensor data,
+              and deployment or evaluation.
+            </p>
+            <div class="highlight-box">
+              <h4>What to add</h4>
+              <p>Mention system design, metrics, edge cases, data scale, and why the work mattered.</p>
+            </div>
+            <div class="project-links">
+              <a href="#">GitHub</a>
+              <a href="#">Write-up</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-title">Bus Stop Safety Detection</div>
+                <div class="project-year">2025</div>
+              </div>
+              <span class="label">Applied AI</span>
+            </div>
+            <div class="tag-list">
+              <span class="tag">Multimodal AI</span>
+              <span class="tag">Edge Deployment</span>
+              <span class="tag">Safety</span>
+            </div>
+            <p class="project-summary">
+              Developed a computer vision safety system for analyzing risks around bus stops using
+              multimodal inputs and machine learning. Add hardware, models, and how the prototype was evaluated.
+            </p>
+            <div class="highlight-box">
+              <h4>What to add</h4>
+              <p>Include model names, hardware stack, deployment setup, and real-world testing notes.</p>
+            </div>
+            <div class="project-links">
+              <a href="#">GitHub</a>
+              <a href="#">Slides</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-title">OOD Detection Research</div>
+                <div class="project-year">2025</div>
+              </div>
+              <span class="label">Research</span>
+            </div>
+            <div class="tag-list">
+              <span class="tag">OOD Detection</span>
+              <span class="tag">Reliability</span>
+              <span class="tag">Evaluation</span>
+            </div>
+            <p class="project-summary">
+              Explored out-of-distribution detection methods to improve the reliability of vision
+              systems under uncertainty. Add dataset names, model backbones, and metrics like AUROC or FPR95.
+            </p>
+            <div class="highlight-box">
+              <h4>What to add</h4>
+              <p>Include benchmark setup, architecture comparison, and strongest quantitative results.</p>
+            </div>
+            <div class="project-links">
+              <a href="#">GitHub</a>
+              <a href="#">Paper</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card contact-box">
+          <div>
+            <div class="eyebrow">Next steps</div>
+            <h2 style="font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.04em;">Add your links and publish</h2>
+            <p style="color: var(--muted); margin-top: 0.5rem; max-width: 52ch;">
+              Replace placeholder links with your GitHub, LinkedIn, email, resume, and project screenshots.
+              Then upload this as a simple static site to GitHub Pages.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="mailto:your-email@example.com">Email Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Built as a simple one-file portfolio template for GitHub Pages.</div>
+  </footer>
+</body>
+</html>
