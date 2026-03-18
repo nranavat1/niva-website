@@ -85,10 +85,10 @@
           />
         </div>
       </div>
-    </section>
+    </div>
 
 
-    <section class="section" id="projects">
+    <div class="section" id="experience">
       <div class="container">
         <div class="section-heading">
           <div>
@@ -98,99 +98,112 @@
 
         <div class="projects-grid">
           <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <div class="project-title">Human Pose Estimation</div>
-                <div class="project-year">2025</div>
-              </div>
-              <span class="label">Deep Learning</span>
-            </div>
-            <div class="tag-list">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Pose Estimation</span>
-              <span class="tag">Deep Learning</span>
-              <span class="tag">Vision Transformer</span>
-            </div>
-            <p class="project-summary">
-              Built a human pose estimation pipeline for understanding body keypoints and movement
-              from visual data. You can add the model used, dataset, metrics, and what was novel
-              or challenging about the implementation.
-            </p>
-            <div class="project-images">
-              <img src="images/vis_fpn_vitpose_simple4.jpg">
-              <img src="images/vis_fpn_vitpose_simple5.jpg">
-              <img src="images/vis_fpn_vitpose_simple7.jpg">
-              <img src="images/vis_fpn_vitpose_simple8.jpg">
-              <img src="images/vis_fpn_vitpose_simple6.jpg">
 
-            </div>
-            <div class="highlight-box">
-              <h4>What to add</h4>
-              <p>Add model architecture, training or inference pipeline, evaluation metric, and outcome.</p>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/nranavat1/Refined_Human_Pose_Estimation">GitHub</a>
-              <a href="#">Demo</a>
+            <div class="project-layout pose-layout">
+
+              <!-- LEFT: IMAGE -->
+              <div class="project-images">
+                  <!-- TOP BIG IMAGE -->
+                  <img src="images/pose_estimation.png" class="main-image">
+
+                  <!-- BOTTOM ROW -->
+                  <div class="sub-images">
+                    <img src="images/vis_fpn_vitpose_simple7.jpg">
+                    <img src="images/vis_fpn_vitpose_simple6.jpg">
+                  </div>
+                </div>
+
+              <!-- RIGHT: TEXT -->
+              <div class="project-content">
+
+                <div class="project-top">
+
+                  <!-- LEFT SIDE -->
+                  <div>
+                    <div class="project-title">Refining Human Pose Estimation</div>
+                  </div>
+
+                  <!-- RIGHT SIDE -->
+                  <div class="project-header-right">
+
+                    <div class="project-year">2025</div>
+                  </div>
+
+                </div>
+
+                <div class="tag-list">
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">Pose Estimation</span>
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">Vision Transformer</span>
+                </div>
+
+                <p class="project-summary">
+                While modern pose estimation models such as ViTPose achieve strong performance on static keypoint detection, accurately predicting future human motion remains challenging due to temporal complexity and variability in human behavior. To address this, I built a human pose estimation and future pose prediction pipeline using a ViTPose backbone with a Feature Pyramid Network (FPN) to capture multi-scale spatial features and improve keypoint detection. The system was trained on approximately 14,000 pose sequences, using temporal windows of past frames to predict future joint trajectories. An initial baseline captured coarse motion trends but struggled with fine-grained joint accuracy and temporal consistency over longer prediction horizons. By refining the model with Smooth L1 Loss and extended training, I improved stability and alignment with ground-truth motion, resulting in more consistent frame-to-frame predictions. This work explores how to move beyond static pose estimation toward robust temporal modeling of human motion under real-world variability.
+                <div class="project-links">
+                  <a href="https://github.com/nranavat1/Refined_Human_Pose_Estimation">GitHub</a>
+                </div>
+
+              </div>
+
             </div>
           </article>
+        </div>
 
+        <div class="projects-grid">
           <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <div class="project-title">Perception for Autonomous Systems</div>
-                <div class="project-year">2025</div>
-              </div>
-              <span class="label">Case Study</span>
-            </div>
-            <div class="tag-list">
-              <span class="tag">Perception</span>
-              <span class="tag">Autonomous Driving</span>
-              <span class="tag">Tracking</span>
-            </div>
-            <p class="project-summary">
-              Worked on scene understanding and object state estimation problems for autonomous
-              systems. Add your exact contributions around perception, state estimation, sensor data,
-              and deployment or evaluation.
-            </p>
-            <div class="highlight-box">
-              <h4>What to add</h4>
-              <p>Mention system design, metrics, edge cases, data scale, and why the work mattered.</p>
-            </div>
-            <div class="project-links">
-              <a href="#">GitHub</a>
-              <a href="#">Write-up</a>
-            </div>
-          </article>
 
-          <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <div class="project-title">Bus Stop Safety Detection</div>
-                <div class="project-year">2025</div>
+            <div class="project-layout pose-layout">
+
+              <!-- LEFT: IMAGE -->
+              <div class="project-images">
+                  
+
+                  <!-- BOTTOM ROW -->
+                  <div class="sub-images">
+                    <img src="images/bus_stop.png">
+                    <img src="images/crash.png">
+                  </div>
+                  <!-- TOP BIG IMAGE -->
+                  <video src="images/output_detected.mp4" class="main-image" controls> </video>
+                </div>
+
+              <!-- RIGHT: TEXT -->
+              <div class="project-content">
+
+                <div class="project-top">
+
+                  <!-- LEFT SIDE -->
+                  <div>
+                    <div class="project-title">Bus Stop Safety Evaluator</div>
+                  </div>
+
+                  <!-- RIGHT SIDE -->
+                  <div class="project-header-right">
+
+                    <div class="project-year">2025</div>
+                  </div>
+
+                </div>
+
+                <div class="tag-list">
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">Vision Language Models</span>
+                  <span class="tag">Object Detection</span>
+                </div>
+
+                <p class="project-summary">
+                      School bus stops are not static and must adapt to changing environments, but there is currently no scalable way to evaluate their safety in real time, especially in scenarios involving children and dynamic traffic conditions. To address this, I developed a multimodal perception system that assesses the safety of potential and existing bus stops using a structured threat vector model. The pipeline combines YOLO-based object detection to identify vehicles and scene-level risks with a fine-tuned Gemini vision-language model (VLM) to extract higher-level context such as sidewalk presence, visibility, and environmental conditions from panoramic imagery. These signals are fused with geospatial data, including OpenStreetMap features and historical crash records, to quantify risk across traffic, pedestrian, and environmental dimensions. The system produces a unified safety score that enables scalable evaluation and comparison of bus stop locations. This work focuses on applying perception models to real-world, safety-critical decision making under dynamic and uncertain conditions.                <div class="project-links">
+                  <a href="https://github.com/nranavat1/2025_PJTL_FleetLab">GitHub</a>
+                </div>
+
               </div>
-              <span class="label">Applied AI</span>
-            </div>
-            <div class="tag-list">
-              <span class="tag">Multimodal AI</span>
-              <span class="tag">Edge Deployment</span>
-              <span class="tag">Safety</span>
-            </div>
-            <p class="project-summary">
-              Developed a computer vision safety system for analyzing risks around bus stops using
-              multimodal inputs and machine learning. Add hardware, models, and how the prototype was evaluated.
-            </p>
-            <div class="highlight-box">
-              <h4>What to add</h4>
-              <p>Include model names, hardware stack, deployment setup, and real-world testing notes.</p>
-            </div>
-            <div class="project-links">
-              <a href="#">GitHub</a>
-              <a href="#">Slides</a>
+
             </div>
           </article>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- EXPERIENCE -->
     <div class="section" id="experience">
@@ -208,18 +221,23 @@
             <div class="card edu-card">
               <div class="edu-header">
                 <div class="edu-left">
-                  <span class="edu-school">Institute of Social Research</span>
+                  <span class="edu-school">Institute of Social Research, <i class="edu-degree"> Graduate Student Research Assistant</i></span>
                 </div>
                 
               </div>
 
-              <div class="edu-degree">
-                Graduate Student Research Assistant
-              </div>
+              <!-- <div class="edu-degree">
+              </div> -->
+
+              <!-- <div class="tag-list">
+                  <span class="tag">Large Data</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Applied Machine Learning</span>
+              </div> -->
 
               <div class="edu-details">
                 <div class="edu-row">
-                  <p> Machine Learning, Computer Vision</p>
+                  <p> Worked on large-scale data linkage and analysis across heterogeneous datasets, focusing on entity matching and structured data integration. Built pipelines using tools such as DuckDB and Python to process and match millions of records efficiently. Explored probabilistic and deterministic approaches to improve accuracy and scalability in real-world data systems.</p>
                 </div>
 
               </div>
@@ -233,18 +251,18 @@
             <div class="card edu-card">
               <div class="edu-header">
                 <div class="edu-left">
-                  <span class="edu-school">Kodiak Robotics</span>
+                  <span class="edu-school">Kodiak Robotics, <i class="edu-degree">
+                Software Engineering Intern, Perception
+                  </i></span>
                 </div>
                 
               </div>
 
-              <div class="edu-degree">
-                Software Engineering Intern, Perception
-              </div>
+              
 
               <div class="edu-details">
                 <div class="edu-row">
-                  <p> Machine Learning, Computer Vision</p>
+                  <p> Worked on perception systems for autonomous trucking, improving trailer detection performance by increasing precision in challenging real-world scenarios. Developed multi-object tracking approaches that improved temporal consistency and reduced downstream planning issues such as unnecessary hard braking. Conducted large-scale simulation testing, building evaluation metrics and dashboards to analyze performance, and contributed to deploying models on production hardware for real-time, safety-critical operation.</p>
                 </div>
 
               </div>
@@ -258,18 +276,18 @@
             <div class="card edu-card">
               <div class="edu-header">
                 <div class="edu-left">
-                  <span class="edu-school">Fleet Lab</span>
+                  <span class="edu-school">Fleet Lab, <i class="edu-degree">
+                Computer Vision Intern
+                  </i></span>
                 </div>
                 
               </div>
 
-              <div class="edu-degree">
-                Computer Vision Intern
-              </div>
+              
 
               <div class="edu-details">
                 <div class="edu-row">
-                  <p> Machine Learning, Computer Vision</p>
+                  <p> Built a multimodal computer vision system to evaluate safety risks at student pickup and drop-off locations using real-world visual and geospatial data. Integrated object detection (YOLO) and a fine-tuned vision-language model (Gemini) to extract both structured and semantic safety signals from panoramic imagery. Designed a unified scoring pipeline and interactive interface to support scalable, data-driven evaluation of transportation safety.</p>
                 </div>
 
               </div>
@@ -283,18 +301,18 @@
             <div class="card edu-card">
               <div class="edu-header">
                 <div class="edu-left">
-                  <span class="edu-school">Amazon</span>
+                  <span class="edu-school">Amazon, <i class="edu-degree">
+                Software Development Engineer
+                  </i></span>
                 </div>
                 
               </div>
 
-              <div class="edu-degree">
-                Software Development Engineer
-              </div>
+              
 
               <div class="edu-details">
                 <div class="edu-row">
-                  <p> Machine Learning, Computer Vision</p>
+                  <p>Developed large-scale backend systems supporting customer-facing features operating at ~500 QPS across distributed infrastructure and production services. Built and optimized services for reliability and performance while maintaining CI/CD pipelines and implementing A/B testing frameworks for safe, data-driven feature rollouts. Worked in an agile environment to design, iterate, and deploy scalable solutions, collaborating across teams to handle high-throughput data and real-time system constraints.</p>
                 </div>
 
               </div>
