@@ -5,358 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Niva Ranavat | Projects Portfolio</title>
   <meta name="description" content="Portfolio of Niva Ranavat — computer vision, machine learning, robotics, and perception projects." />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-2: #f1f5f9;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --muted: #475569;
-      --muted-2: #64748b;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --max-width: 1120px;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom, #f8fafc, #eef2ff);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--max-width));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(248, 250, 252, 0.82);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-      gap: 1rem;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      font-size: 1.05rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover,
-    .socials a:hover,
-    .project-links a:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      padding: 4.5rem 0 2rem;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius-xl);
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 2rem;
-    }
-
-    .eyebrow {
-      color: var(--muted-2);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      max-width: 8ch;
-    }
-
-    .hero p {
-      margin-top: 1.2rem;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 58ch;
-    }
-
-    .hero-actions,
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.4rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 0.86rem 1.2rem;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--text);
-      color: white;
-      border-color: var(--text);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.95;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: var(--surface-2);
-    }
-
-    .focus-box {
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      align-self: end;
-    }
-
-    .focus-box h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .focus-box ul {
-      list-style: none;
-      display: grid;
-      gap: 0.75rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .section {
-      padding: 1.4rem 0 1.2rem;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: end;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      letter-spacing: -0.04em;
-    }
-
-    .section-note {
-      max-width: 40ch;
-      color: var(--muted-2);
-      font-size: 0.95rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(226, 232, 240, 0.92);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.8rem;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 1rem;
-    }
-
-    .chip {
-      border: 1px solid var(--border);
-      background: var(--surface-2);
-      color: var(--muted);
-      padding: 0.58rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .project-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .project-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .project-year {
-      color: var(--muted-2);
-      font-size: 0.92rem;
-      margin-top: 0.2rem;
-    }
-
-    .label {
-      padding: 0.38rem 0.7rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      padding: 0.4rem 0.72rem;
-      border-radius: 999px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .project-summary {
-      color: var(--muted);
-    }
-
-    .highlight-box {
-      border-radius: 18px;
-      background: #f8fafc;
-      border: 1px dashed var(--border);
-      padding: 1rem;
-    }
-
-    .highlight-box h4 {
-      font-size: 0.78rem;
-      color: var(--muted-2);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.45rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .contact-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted-2);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero-card,
-      .two-col,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading {
-        align-items: start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-card,
-      .card { padding: 1.2rem; }
-      .nav-inner { align-items: start; flex-direction: column; }
-      h1 { max-width: 100%; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="nav">
@@ -365,61 +14,47 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
+  
 
   <main id="top">
     <section class="hero">
       <div class="container">
         <div class="hero-card">
-          <div>
-            <div class="eyebrow">Portfolio Template</div>
-            <h1>Computer Vision & AI Projects</h1>
-            <p>
-              I’m Niva Ranavat, a machine learning and computer vision engineer interested in
-              perception, robotics, human-centered AI, and real-world systems. This is a simple
-              GitHub-friendly portfolio template you can edit fast and publish easily.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn btn-secondary" href="#contact">Contact</a>
-            </div>
-
-            <div class="socials">
-              <a href="#">GitHub</a>
-              <a href="#">LinkedIn</a>
-              <a href="#">Resume</a>
-            </div>
-          </div>
-
-          <aside class="focus-box">
-            <h3>Current focus</h3>
-            <ul>
-              <li>Human pose estimation and visual understanding</li>
-              <li>Perception for robotics and autonomous systems</li>
-              <li>Machine learning systems with real-world impact</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container two-col">
-        <article class="card">
-          <h3>About</h3>
+        <div>
+          <div class="eyebrow">Portfolio</div>
+          <h1>Niva Ranavat</h1>
           <p>
-            I build projects across computer vision, perception, machine learning, and robotics.
-            I like combining strong technical implementation with practical impact, especially in
-            safety-critical and human-centered applications.
+            Hi! I'm a graduate student at the University of Michigan, studying Computer Science and Engineering.  I’m a machine learning and computer vision engineer with 4+ years of experience across large-scale systems, product development, and production ML pipelines. I’ve built systems ranging from backend infrastructure to perception pipelines, including computer vision, object detection, and multimodal models.
+          </p><p>
+          I’m focused on 3D perception and building robust robotic systems for safety-critical applications, where real-world reliability matters as much as model performance.
           </p>
-        </article>
+          <!-- <p>
+            Hi! I'm a graduate student at the University of Michigan, studying Computer Science and Engineering. I’m a machine learning and computer vision engineer with experience spanning large-scale software systems, customer-facing product development, and end-to-end machine learning pipelines. I’ve built systems ranging from backend infrastructure to perception pipelines, and have worked across the full lifecycle of ML systems, from data processing and model training to deployment and evaluation in real-world environments.
+          </p><p>
+            My work has focused on computer vision and perception, including object detection, multimodal models, and scene understanding. I’ve explored how these models behave under real-world constraints such as scale, noise, and variability, and I’m particularly interested in building systems that remain reliable even when conditions are imperfect or unpredictable.
+          </p><p>
+            I’m especially drawn to 3D perception and safety-critical applications, where performance is not just about accuracy but about consistency, robustness, and the ability to handle edge cases. I care about building systems that can operate reliably in the real world, not just perform well in controlled settings, and I enjoy working at the intersection of machine learning, systems, and real-world deployment.          </p>
+          </p> -->
+          <!-- <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+          </div> -->
 
-        <article class="card">
-          <h3>Skills</h3>
+
+          <div class="socials">
+            <a href="href=mailto:niva.ranavat@gmail.com">Email</a>
+            <a href="https://github.com/nranavat1/">GitHub</a>
+            <a href="https://www.linkedin.com/in/niva-ranavat">LinkedIn</a>
+            <a href="https://docs.google.com/document/d/1KFC8j38Fg5d64eI0ujhTPCf9oUNAdb_QbiEwM4Gl4yg/edit?usp=sharing">Resume</a>
+          </div>
+        
+
           <div class="skills">
             <span class="chip">Python</span>
             <span class="chip">C++</span>
@@ -432,21 +67,33 @@
             <span class="chip">Sensor Fusion</span>
             <span class="chip">Machine Learning</span>
           </div>
-        </article>
+
+         
+
+      </div>
+       <!-- PROFILE IMAGE -->
+        <div style="display:flex; justify-content:flex-end; align-items:flex-start;">
+          <img src="images/profile.jpg" alt="Niva Ranavat"
+            style="
+              width: 420px;
+              height: 420px;
+              object-fit: cover;
+              border-radius: 50%;
+              border: 4px solid #e2e8f0;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            "
+          />
+        </div>
       </div>
     </section>
+
 
     <section class="section" id="projects">
       <div class="container">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">Selected Work</div>
             <h2>Projects</h2>
           </div>
-          <p class="section-note">
-            Replace the placeholder text with your exact project results, links, screenshots, and
-            metrics. This single HTML file is meant to be easy to upload to GitHub Pages.
-          </p>
         </div>
 
         <div class="projects-grid">
@@ -454,26 +101,35 @@
             <div class="project-top">
               <div>
                 <div class="project-title">Human Pose Estimation</div>
-                <div class="project-year">2026</div>
+                <div class="project-year">2025</div>
               </div>
-              <span class="label">Featured</span>
+              <span class="label">Deep Learning</span>
             </div>
             <div class="tag-list">
               <span class="tag">Computer Vision</span>
               <span class="tag">Pose Estimation</span>
               <span class="tag">Deep Learning</span>
+              <span class="tag">Vision Transformer</span>
             </div>
             <p class="project-summary">
               Built a human pose estimation pipeline for understanding body keypoints and movement
               from visual data. You can add the model used, dataset, metrics, and what was novel
               or challenging about the implementation.
             </p>
+            <div class="project-images">
+              <img src="images/vis_fpn_vitpose_simple4.jpg">
+              <img src="images/vis_fpn_vitpose_simple5.jpg">
+              <img src="images/vis_fpn_vitpose_simple7.jpg">
+              <img src="images/vis_fpn_vitpose_simple8.jpg">
+              <img src="images/vis_fpn_vitpose_simple6.jpg">
+
+            </div>
             <div class="highlight-box">
               <h4>What to add</h4>
               <p>Add model architecture, training or inference pipeline, evaluation metric, and outcome.</p>
             </div>
             <div class="project-links">
-              <a href="#">GitHub</a>
+              <a href="https://github.com/nranavat1/Refined_Human_Pose_Estimation">GitHub</a>
               <a href="#">Demo</a>
             </div>
           </article>
@@ -532,56 +188,211 @@
               <a href="#">Slides</a>
             </div>
           </article>
-
-          <article class="card project-card">
-            <div class="project-top">
-              <div>
-                <div class="project-title">OOD Detection Research</div>
-                <div class="project-year">2025</div>
-              </div>
-              <span class="label">Research</span>
-            </div>
-            <div class="tag-list">
-              <span class="tag">OOD Detection</span>
-              <span class="tag">Reliability</span>
-              <span class="tag">Evaluation</span>
-            </div>
-            <p class="project-summary">
-              Explored out-of-distribution detection methods to improve the reliability of vision
-              systems under uncertainty. Add dataset names, model backbones, and metrics like AUROC or FPR95.
-            </p>
-            <div class="highlight-box">
-              <h4>What to add</h4>
-              <p>Include benchmark setup, architecture comparison, and strongest quantitative results.</p>
-            </div>
-            <div class="project-links">
-              <a href="#">GitHub</a>
-              <a href="#">Paper</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
+
+    <!-- EXPERIENCE -->
+    <div class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Experience</h2>
+        </div>
+
+        <div class="education-timeline">
+          
+          <!-- Kodiak -->
+          <div class="education-item">
+            <span class="edu-years">May 2025 – Present</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <span class="edu-school">Institute of Social Research</span>
+                </div>
+                
+              </div>
+
+              <div class="edu-degree">
+                Graduate Student Research Assistant
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <p> Machine Learning, Computer Vision</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Kodiak -->
+          <div class="education-item">
+            <span class="edu-years">May 2025 – Aug 2025</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <span class="edu-school">Kodiak Robotics</span>
+                </div>
+                
+              </div>
+
+              <div class="edu-degree">
+                Software Engineering Intern, Perception
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <p> Machine Learning, Computer Vision</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Fleet Lab -->
+          <div class="education-item">
+            <span class="edu-years">Dec 2024 – Dec 2025</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <span class="edu-school">Fleet Lab</span>
+                </div>
+                
+              </div>
+
+              <div class="edu-degree">
+                Computer Vision Intern
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <p> Machine Learning, Computer Vision</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <!-- Amazon -->
+          <div class="education-item">
+            <span class="edu-years">Aug 2021 – Feb 2024</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <span class="edu-school">Amazon</span>
+                </div>
+                
+              </div>
+
+              <div class="edu-degree">
+                Software Development Engineer
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <p> Machine Learning, Computer Vision</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Education</h2>
+        </div>
+
+        <div class="education-timeline">
+
+          <!-- UMICH -->
+          <div class="education-item">
+            <span class="edu-years">2024 – 2026</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <img src="images/umich.png" class="edu-logo" />
+                  <span class="edu-school">University of Michigan</span>
+                </div>
+                
+              </div>
+
+              <div class="edu-degree">
+                M.S. in Computer Science and Engineering
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <span><strong>Specialization:</strong> Machine Learning, Computer Vision</span>
+                </div>
+
+                <div class="edu-row">
+                  <span><strong>GPA:</strong> 3.98/4.0</span>
+                  <span><strong>Coursework:</strong> Advanced Computer Vision, Deep Learning for Robot Perception, Parallel Computing, Self-Driving Cars</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- UCI -->
+          <div class="education-item">
+            <span class="edu-years">2018 – 2021</span>
+            <div class="education-marker"></div>
+            <div class="card edu-card">
+              <div class="edu-header">
+                <div class="edu-left">
+                  <img src="images/uci.png" class="edu-logo" />
+                  <span class="edu-school">University of California, Irvine</span>
+                </div>
+              </div>
+
+              <div class="edu-degree">
+                B.S. in Computer Science, <i>Cum Laude</i>
+              </div>
+
+              <div class="edu-details">
+                <div class="edu-row">
+                  <span><strong>GPA:</strong> 3.90/4.0</span>
+                  <span><strong>Coursework:</strong> Data Structures and Algorithms, Machine Learning, Computer Vision and Computer Graphics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <section class="section" id="contact">
       <div class="container">
         <div class="card contact-box">
           <div>
-            <div class="eyebrow">Next steps</div>
-            <h2 style="font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.04em;">Add your links and publish</h2>
-            <p style="color: var(--muted); margin-top: 0.5rem; max-width: 52ch;">
-              Replace placeholder links with your GitHub, LinkedIn, email, resume, and project screenshots.
-              Then upload this as a simple static site to GitHub Pages.
-            </p>
+            <h2 style="font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.04em;">Connect with Me!</h2>
+            <div class="hero-actions">
+            <a class="btn btn-secondary" href="mailto:niva.ranavat@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/niva-ranavat">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/nranavat1/">GitHub</a>
+            <a class="btn btn-secondary" href="https://docs.google.com/document/d/1KFC8j38Fg5d64eI0ujhTPCf9oUNAdb_QbiEwM4Gl4yg/edit?usp=sharing">Resume</a>
           </div>
-          <a class="btn btn-primary" href="mailto:your-email@example.com">Email Me</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">Built as a simple one-file portfolio template for GitHub Pages.</div>
+    <div class="container">Contact me if you have opportunities!</div>
   </footer>
 </body>
 </html>
